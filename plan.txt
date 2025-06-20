@@ -1,0 +1,21 @@
+Replace:
+All Light +-
+Switch +
+Button
+Radio*
+Logic Gate
+Timer
+Totebot Heads
+Raft Shark
+Beacon
+Pump
+BatteryContainer
+
+New:
+Generator +
+Accumulator +
+Threshold
+El To Logic Converter
+Kinetic Generator
+Rotor Generator
+

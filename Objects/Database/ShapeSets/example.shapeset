@@ -1,0 +1,199 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "df7f01",
+         "flammable" : true,
+         "legacyId" : 200,
+         "name" : "obj_light_headlight",
+         "physicsMaterial" : "Plastic",
+         "ratings" : {
+            "buoyancy" : 4,
+            "density" : 2,
+            "durability" : 3,
+            "friction" : 4
+         },
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/HeadLight.rend",
+         "rotationSet" : "PropZY",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "effect" : "HeadLight",
+               "lossE" : 0.0,
+               "maxE" : 30.0,
+               "maxIntensity" : 1.50,
+               "minE" : 7.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "-X+X-Y+Y-Z",
+         "uuid" : "ed27f5e2-cac5-4a32-a5d9-49f116acc6af"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 4,
+            "z" : 1
+         },
+         "color" : "79859c",
+         "flammable" : false,
+         "legacyId" : 525,
+         "name" : "obj_fittings_fusebox",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 3,
+            "density" : 4,
+            "durability" : 6,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "includes" : [ "POSITION", "UV0", "UV1", "NORMAL", "TANGENTS" ],
+                  "mesh" : "$GAME_DATA/Objects/Mesh/fittings/obj_fittings_fusebox.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_dif.tga",
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_asg.tga",
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_nor.tga",
+                           "$GAME_DATA/Objects/Textures/fittings/obj_fittings_fusebox_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZY",
+         "scripted" : {
+            "classname" : "Generator",
+            "data" : {
+               "genE" : 100.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Generator.lua"
+         },
+         "uuid" : "697e3b80-d3f7-4f4a-aba2-23611a45f967"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$GAME_DATA/Objects/Collision/obj_interactive_switch.obj",
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "legacyId" : 109,
+         "name" : "obj_interactive_switch",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 2,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_switch.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Switch",
+            "data" : {
+               "lossE" : 0.50,
+               "maxE" : 0.0,
+               "minE" : 1.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Switch.lua"
+         },
+         "stackSize" : 10,
+         "sticky" : "-Y",
+         "uuid" : "7cf717d7-d167-4f2d-a6e7-6b2c70aa3986"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 2
+         },
+         "color" : "f1a400",
+         "flammable" : true,
+         "name" : "Accumulator",
+         "physicsMaterial" : "Plastic",
+         "ratings" : {
+            "buoyancy" : 7,
+            "density" : 2,
+            "durability" : 2,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/consumable/obj_consumable_battery.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/AccumulatorDif.png",
+                           "$SURVIVAL_DATA/Objects/Textures/consumable/obj_consumable_battery_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/AccumulatorNor.png"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "restrictions" : {
+            "erasable" : true
+         },
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Accumulator",
+            "data" : {
+               "capacityE" : 500000.0,
+               "genE" : 50.0,
+               "lossE" : 0.0,
+               "maxE" : 100.0,
+               "minE" : 0.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
+         },
+         "stackSize" : 20,
+         "sticky" : "-Y+Y",
+         "uuid" : "46d44e30-c566-4e96-b5e6-d7e8fc8b772c"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "df7f01",
+         "flammable" : false,
+         "legacyId" : 119,
+         "name" : "obj_interactive_logicgate",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 2,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "rotationSet" : "PropYZ",
+         "scripted" : {
+            "classname" : "LogicGate",
+            "data" : {
+               "lossE" : 0.10,
+               "maxE" : 10.0,
+               "minE" : 1.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/LogicGate.lua"
+         },
+         "stackSize" : 10,
+         "uuid" : "9f0f56e8-2c31-4d83-996c-d00a9b296c3f"
+      }
+   ]
+}

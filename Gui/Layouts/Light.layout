@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="BackgroundInteractableNarrow" position_real="0.37031249999999999 0.3435185185185185 0.25937500000000002 0.31296296296296294" align="Default" name="MainPanel">
+        <Property key="NeedKey" value="false"/>
+        <Property key="NeedMouse" value="true"/>
+        <Property key="InheritsAlpha" value="false"/>
+        <Widget type="TextBox" skin="TextBox" position_real="0.098393574297188757 0.14497041420118342 0.79919678714859432 0.14497041420118342" align="Default">
+            <Property key="Caption" value="#{CONTROLLER_LIGHT_TITLE}"/>
+            <Property key="FontName" value="SM_HeaderLarge_Wide"/>
+            <Property key="TextAlign" value="Center"/>
+            <Property key="NeedKey" value="false"/>
+            <Property key="NeedMouse" value="false"/>
+        </Widget>
+        <Widget type="Window" skin="PanelEmpty" position_real="0.098393574297188757 0.64792899408284022 0.79919678714859432 0.23372781065088757" name="Slider">
+            <Property key="Range" value="20"/>
+            <Property key="NeedKey" value="false"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.44377510040160645 0.37278106508875741 0.10642570281124498 0.18639053254437871" align="Default" name="Value">
+            <Property key="Caption" value="1"/>
+            <Property key="FontName" value="Default"/>
+            <Property key="TextAlign" value="Center"/>
+            <Property key="NeedKey" value="false"/>
+            <Property key="NeedMouse" value="false"/>
+            <Property key="ImageResource" value="IconsLampSpritesheet"/>
+            <Property key="ImageGroup" value="IconsLampSpritesheet"/>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

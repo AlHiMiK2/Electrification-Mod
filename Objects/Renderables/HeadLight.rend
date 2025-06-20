@@ -1,0 +1,34 @@
+{
+   "lodList": [
+					{
+						"subMeshMap": {
+							"lightmesh_mat": {
+								"material": "PoseAnimDifAsgNor",
+								"textureList": [
+									"$GAME_DATA/Objects/Textures/lights/obj_light_headlight_dif.tga",
+									"$GAME_DATA/Objects/Textures/lights/obj_light_headlight_asg.tga",
+									"$GAME_DATA/Objects/Textures/lights/obj_light_headlight_nor.tga"
+								]
+							},
+							"lightcone_mat": {
+								"material": "PoseAnimLightCone",
+								"textureList": [
+									"$GAME_DATA/Objects/Textures/lights/obj_light_headlightbeam_dif.tga",
+									"",
+									""
+								]
+							},
+							"lightflare_mat": {
+								"material": "PoseAnimLightFlare",
+								"textureList": [
+									"$GAME_DATA/Objects/Textures/lights/obj_light_headlightflare_dif.tga",
+									"",
+									""
+								]
+							}
+						},
+						"mesh": "$GAME_DATA/Objects/Mesh/lights/obj_light_headlight_off.fbx",
+						"pose0": "$GAME_DATA/Objects/Mesh/lights/obj_light_headlight_on.fbx"
+					}
+				]
+}

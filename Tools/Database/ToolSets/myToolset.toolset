@@ -1,0 +1,15 @@
+{
+   "toolList" : [
+      {
+         "name" : "analyzer",
+         "previewRenderable" : "$GAME_DATA/Character/Char_Tools/char_connecttool_preview.rend",
+         "previewRotation" : [ 1, 0, 0, 0, 0, -1, 0, 1, 0 ],
+         "script" : {
+            "class" : "ComponentAnalyzerTool",
+            "data" : {},
+            "file" : "$CONTENT_DATA/Scripts/ComponentAnalyzerTool.lua"
+         },
+         "uuid" : "899580f1-a9ae-414f-8183-0b60ab925215"
+      }
+   ]
+}

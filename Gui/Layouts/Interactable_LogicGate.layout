@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="LogicGateBG" position_real="0.21875 0.26851851851851855 0.5625 0.46296296296296297" name="MainPanel">
+        <Property key="NeedKey" value="false"/>
+        <Property key="NeedMouse" value="true"/>
+        <Property key="InheritsAlpha" value="false"/>
+        <Widget type="TextBox" skin="TextBox" position_real="0 0.089999999999999997 1 0.098000000000000004">
+            <Property key="Caption" value="#{CONTROLLER_LOGIC_TITLE}"/>
+            <Property key="FontName" value="SM_HeaderLarge_Wide"/>
+            <Property key="TextAlign" value="Center"/>
+            <Property key="NeedKey" value="false"/>
+            <Property key="NeedMouse" value="false"/>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.046296296296296294 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="And">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="AND"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="and"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.19351851851851851 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="Or">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="OR"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="or"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.34166666666666667 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="Xor">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="XOR"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="xor"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.52777777777777779 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="Nand">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="NAND"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="nand"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.67500000000000004 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="Nor">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="NOR"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="nor"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="Button" skin="LogicGateButtons" position_real="0.8212962962962963 0.35799999999999998 0.13240740740740742 0.28599999999999998" name="Xnor">
+            <Property key="FontName" value="SM_ButtonSmall"/>
+            <Property key="Caption" value="XNOR"/>
+            <Property key="TextAlign" value="Center"/>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.24475524475524477 0.30769230769230771 0.47552447552447552 0.37062937062937062" name="LogicIcon">
+                <Property key="ImageResource" value="LogicGateIcons"/>
+                <Property key="ImageName" value="xnor"/>
+                <Property key="NeedKey" value="false"/>
+                <Property key="NeedMouse" value="false"/>
+            </Widget>
+        </Widget>
+        <Widget type="TextBox" skin="TextBox" position_real="0.052777777777777778 0.23999999999999999 0.41666666666666669 0.11799999999999999">
+            <Property key="Caption" value="#{CONTROLLER_LOGIC_BASIC}"/>
+            <Property key="FontName" value="X_Interactable_LogicGate_Category"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+        <Widget type="TextBox" skin="TextBox" position_real="0.53240740740740744 0.23999999999999999 0.41666666666666669 0.11799999999999999">
+            <Property key="Caption" value="#{CONTROLLER_LOGIC_INVERTED}"/>
+            <Property key="FontName" value="X_Interactable_LogicGate_Category"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+        <Widget type="TextBox" skin="TextBox" position_real="0.052777777777777778 0.76000000000000001 0.58240740740740737 0.14999999999999999" name="DescriptionText">
+            <Property key="FontName" value="SM_TextSmall"/>
+            <Property key="Caption" value="#{CONTROLLER_LOGIC_DESCRIPTION_AND}"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.65000000000000002 0.79600000000000004 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="off"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.65000000000000002 0.85599999999999998 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="off"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.76666666666666672 0.79600000000000004 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="off"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.76666666666666672 0.85599999999999998 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="on"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.88240740740740742 0.79600000000000004 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="on"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.88240740740740742 0.85599999999999998 0.013888888888888888 0.028000000000000001">
+            <Property key="ImageResource" value="LogicGateDescriptionDots"/>
+            <Property key="ImageName" value="on"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.66388888888888886 0.754 0.06851851851851852 0.14999999999999999" name="Lamp00">
+            <Property key="ImageResource" value="LogicGateDescriptionLamps"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.78055555555555556 0.754 0.06851851851851852 0.14999999999999999" name="Lamp01">
+            <Property key="ImageResource" value="LogicGateDescriptionLamps"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position_real="0.89629629629629626 0.754 0.06851851851851852 0.14999999999999999" name="Lamp11">
+            <Property key="ImageResource" value="LogicGateDescriptionLamps"/>
+        </Widget>
+        <Widget type="Widget" skin="WhiteSkin" position_real="0.050000000000000003 0.70199999999999996 0.90277777777777779 0">
+            <Property key="Alpha" value="0.25"/>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>
