@@ -9,26 +9,12 @@ function Receiver:sv_init(active)
         lossE = self.data.lossE,
         isPowered = false
     }
-    self.needSync = true
     self.interactable.active = active
     self.interactable.publicData = self.sv
 end
 
-function Receiver:sv_receiveE(E)
-    self.sv.E = math.max(E, 0)
-
-    if self.sv.E >= self.sv.minE then
-        self.sv.isPowered = true
-    else
-        self.sv.isPowered = false
-    end
-    self.interactable.publicData = self.sv
-    self.needSync = true
-end
-
 function Receiver:sv_calculateMaxE()
     local childs = self.interactable:getChildren(sm.interactable.connectionType.logic)
-    if #childs == 0 then return 0 end
     local maxE = 0
     for i, v in pairs(childs) do
         if v.type == "scripted" and sm.event.sendToInteractable(v, "sv_isReceiver") then
@@ -37,8 +23,8 @@ function Receiver:sv_calculateMaxE()
             end
         end
     end
-    self.sv.maxE = maxE
-    self.needSync = true
+    self.sv.maxE = math.max(maxE, 0)
+    self.interactable.publicData.maxE = self.sv.maxE
 end
 
 function Receiver:sv_checkSender()
@@ -49,6 +35,14 @@ function Receiver:sv_checkSender()
         end
     end
     return false
+end
+
+function Receiver:sv_resetRecieve()
+    self.interactable.publicData.E = 0
+    self.interactable.publicData.isPowered = false
+    if sm.event.sendToInteractable(self.interactable, "sv_isSender") then
+        self:sv_resetSend()
+    end
 end
 
 function Receiver:sv_isReceiver() end

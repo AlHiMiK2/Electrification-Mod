@@ -10,6 +10,17 @@
             "file" : "$CONTENT_DATA/Scripts/ComponentAnalyzerTool.lua"
          },
          "uuid" : "899580f1-a9ae-414f-8183-0b60ab925215"
+      },
+      {
+         "autoTool" : true,
+         "name" : "",
+         "previewRenderable" : "$GAME_DATA/Character/Char_Tools/char_connecttool_preview.rend",
+         "script" : {
+            "class" : "ECalculator",
+            "data" : {},
+            "file" : "$CONTENT_DATA/Scripts/ECalculator.lua"
+         },
+         "uuid" : "870fbc32-938e-487d-ab76-9e629bdf89c1"
       }
    ]
 }

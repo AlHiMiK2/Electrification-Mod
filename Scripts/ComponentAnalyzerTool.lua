@@ -178,7 +178,7 @@ function ComponentAnalyzerTool:client_onUnequip()
 end
 
 function ComponentAnalyzerTool:sv_getDataFromInteractable(data)
-	self.network:sendToClient(data.Player, "cl_setInteractableData", data.Interactable.publicData)
+	self.network:sendToClient(data.Player, "cl_setInteractableData", {publicData = data.Interactable.publicData, interactable = data.Interactable})
 end
 
 function ComponentAnalyzerTool:client_onEquippedUpdate( primaryState, secondaryState )
@@ -187,11 +187,9 @@ function ComponentAnalyzerTool:client_onEquippedUpdate( primaryState, secondaryS
 		if valid then
 			local shape = result:getShape()
 			if shape and shape.interactable then
-				if sm.event.sendToInteractable(shape.interactable, "sv_isReceiver") then
-					self.network:sendToServer("sv_getDataFromInteractable", {Interactable = shape.interactable, Player = sm.localPlayer.getPlayer()})
-					self:cl_showInteractableInfo()
-					return true, true
-				end
+				self.network:sendToServer("sv_getDataFromInteractable", {Interactable = shape.interactable, Player = sm.localPlayer.getPlayer()})
+				self:cl_showInteractableInfo()
+				return true, true
 			end
 		end
 		self.publicData = nil
@@ -200,19 +198,17 @@ function ComponentAnalyzerTool:client_onEquippedUpdate( primaryState, secondaryS
 end
 
 function ComponentAnalyzerTool:cl_setInteractableData(data)
-	self.publicData = data
+	self.publicData = data.publicData
+	self.target = data.interactable
 end
 
 function ComponentAnalyzerTool:cl_showInteractableInfo()
-	if self.publicData == nil then return end
-	local rE = math.floor(self.publicData.E * 10 + 0.5) / 10
-	local rMaxE = math.floor(self.publicData.maxE * 10 + 0.5) / 10
-	local rMinE = math.floor(self.publicData.minE * 10 + 0.5) / 10
-	local rLossE = math.floor(self.publicData.lossE * 10 + 0.5) / 10
-	sm.gui.setInteractionText((
-	"CUE: "..rE..
-	"	Max CUE: "..rMaxE..
-	"	Min CUE: "..rMinE..
-	"	Loss CUE: "..rLossE
-	))
+	if not sm.exists(self.target) or self.publicData == nil then return end
+	local text = ""
+	for k, v in pairs(self.publicData) do
+		if type(v) == "number" then
+			text = text.. tostring(k).. " = ".. tostring(math.floor(v * 10 + 0.5) / 10).. "	"
+		end
+	end
+	sm.gui.setInteractionText(text)
 end

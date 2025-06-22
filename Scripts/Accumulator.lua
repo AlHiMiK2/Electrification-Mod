@@ -1,8 +1,8 @@
-dofile("$CONTENT_DATA/Scripts/Receiver.lua")
-dofile("$CONTENT_DATA/Scripts/Sender.lua")
+dofile("$CONTENT_DATA/Scripts/IGenerator.lua")
+dofile("$CONTENT_DATA/Scripts/IComponent.lua")
 dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
----@class Accumulator : Receiver, Sender
-Accumulator = class(_wm_class(Receiver, Sender))
+---@class Accumulator : IGenerator, IComponent
+Accumulator = class(_wm_class(IGenerator, IComponent))
 
 Accumulator.maxParentCount = 1
 Accumulator.maxChildCount = -1
@@ -10,26 +10,32 @@ Accumulator.connectionInput = sm.interactable.connectionType.logic
 Accumulator.connectionOutput = sm.interactable.connectionType.logic
 
 function Accumulator:server_onCreate()
-    self.genE = self.data.genE
-    self.capacityE = self.data.capacityE
-    self.currentE = 0
-    Receiver.sv_init(self, true)
+    IGenerator.sv_init(self)
+    IComponent.sv_init(self)
+    self.interactable.publicData = {E = 0, consumptionE = self.data.consumptionE, outE = 0, capacityE = self.data.capacityE, storedE = 0, isSafe = self.data.isSafe or false}
 end
 
 function Accumulator:server_onFixedUpdate(timeStep)
-    self.interactable.active = self.currentE <= self.capacityE
-    if not Receiver.sv_checkSender(self) then
-        Receiver.sv_receiveE(self, 0)
+    if self.eCalculator == nil then
+        IGenerator.sv_register(self)
+        IComponent.sv_register(self)
+        return
     end
-    if self.needSync then
-        self.needSync = false
-        self.currentE = self.currentE + self.sv.E
-    end
-    local sendE = self.genE
-    local over = self.currentE - self.genE
-    if over < 0 then
-        sendE = sendE + over
-    end
+    self.interactable.publicData.storedE = math.min(self.interactable.publicData.storedE + self.interactable.publicData.E, self.interactable.publicData.capacityE)
+    self.interactable.active = self.interactable.publicData.storedE <= self.interactable.publicData.capacityE
+end
 
-    self.currentE = self.currentE - Sender.sv_send(self, sendE)
+function Accumulator:sv_setOutE(sumE)
+    local E = sumE
+    local over = self.interactable.publicData.storedE - E
+    if over < 0 then
+        E = E + over
+    end
+    self.interactable.publicData.outE = E
+    self.interactable.publicData.storedE = self.interactable.publicData.storedE - E
+end
+
+function Accumulator:server_onDestroy()
+    IGenerator.sv_deregister(self)
+    IComponent.sv_deregister(self)
 end

@@ -1,4 +1,4 @@
-dofile("$CONTENT_DATA/Scripts/Receiver.lua")
+dofile("$CONTENT_DATA/Scripts/LogicReceiver.lua")
 dofile("$CONTENT_DATA/Scripts/Sender.lua")
 dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
 ---@class LogicGate : LogicReceiver, LogicSender

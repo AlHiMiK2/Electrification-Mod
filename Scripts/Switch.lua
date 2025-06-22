@@ -1,8 +1,7 @@
-dofile("$CONTENT_DATA/Scripts/Receiver.lua")
-dofile("$CONTENT_DATA/Scripts/Sender.lua")
+dofile("$CONTENT_DATA/Scripts/IComponent.lua")
 dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
----@class Switch : Receiver, Sender
-Switch = class(_wm_class(Receiver, Sender))
+---@class Switch : IComponent
+Switch = class(IComponent)
 
 Switch.colorNormal = sm.color.new("#F93380")
 Switch.colorHighlight = sm.color.new("#FF4B98")
@@ -13,22 +12,18 @@ Switch.connectionOutput = sm.interactable.connectionType.logic
 Switch.poseWeightCount = 1
 
 function Switch:server_onCreate()
-    Receiver.sv_init(self, false)
+    IComponent.sv_init(self)
 end
 
-function Switch:server_onFixedUpdate()
-    Receiver.sv_calculateMaxE(self)
-    if not Receiver.sv_checkSender(self) then
-        Receiver.sv_receiveE(self, 0)
+function Switch:server_onFixedUpdate(timeStep)
+    if self.eCalculator == nil then
+        IComponent.sv_register(self)
+        return
     end
-    if self.needSync then
-        self.needSync = false
-    end
-    if self.sv.isPowered and self.interactable.active then
-        Sender.sv_send(self, self.sv.E)
-    else
-        Sender.sv_send(self, 0)
-    end
+end
+
+function Switch:server_onDestroy()
+    IComponent.sv_deregister(self)
 end
 
 function Switch:sv_switch()

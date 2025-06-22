@@ -1,7 +1,7 @@
-dofile("$CONTENT_DATA/Scripts/Receiver.lua")
+dofile("$CONTENT_DATA/Scripts/IComponent.lua")
 
----@class Light : Receiver
-Light = class(Receiver)
+---@class Light : IComponent
+Light = class(IComponent)
 Light.colorNormal = sm.color.new("#FEEA6D")
 Light.colorHighlight = sm.color.new("#FFF19C")
 Light.maxParentCount = 1
@@ -12,20 +12,23 @@ Light.poseWeightCount = 1
 Light.steps = 10
 
 function Light:server_onCreate()
-    Receiver.sv_init(self, true)
+    IComponent.sv_init(self)
+    self.interactable.active = true
     local saved = self.storage:load() or {}
     self.sv_intensity = saved.intensity or 4
     self:sv_updateStorage()
 end
 
-function Light:server_onFixedUpdate()
-    if not Receiver.sv_checkSender(self) then
-        Receiver.sv_receiveE(self, 0)
+function Light:server_onFixedUpdate(timeStep)
+    if self.eCalculator == nil then
+        IComponent.sv_register(self)
+        return
     end
-    if self.needSync then
-        self.needSync = false
-        self.network:setClientData(self.sv, 2)
-    end
+    self.network:setClientData(self.interactable.publicData, 2)
+end
+
+function Light:server_onDestroy()
+    IComponent.sv_deregister(self)
 end
 
 function Light:sv_updateStorage()
@@ -42,8 +45,8 @@ function Light:sv_lightStrengthChanged(value)
 end
 
 function Light:client_onCreate()
-    Receiver.cl_init(self)
     self.intensity = 4
+    self.cl = {E = 0, consumptionE = self.data.consumptionE}
 end
 
 function Light:client_onUpdate()
@@ -95,8 +98,9 @@ function Light:cl_updateLightEffect()
     if not sm.exists(self.light) then
         self.light = sm.effect.createEffect(self.data.effect, self.interactable)
     end
-    if self.cl.isPowered then
-        local multiply = self.cl.E / self.cl.maxE
+    local parent = self.interactable:getSingleParent()
+    if parent and parent.active then
+        local multiply = self.cl.E / self.cl.consumptionE
         self.light:setParameter("color", self.shape.color)
         self.light:setParameter("intensity", self.data.maxIntensity / Light.steps * self.intensity * multiply)
         self.interactable:setPoseWeight(0, multiply)

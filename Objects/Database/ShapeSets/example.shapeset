@@ -22,11 +22,9 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
+               "consumptionE" : 10.0,
                "effect" : "HeadLight",
-               "lossE" : 0.0,
-               "maxE" : 30.0,
-               "maxIntensity" : 1.50,
-               "minE" : 7.0
+               "maxIntensity" : 1.50
             },
             "filename" : "$CONTENT_DATA/Scripts/Light.lua"
          },
@@ -73,7 +71,7 @@
          "scripted" : {
             "classname" : "Generator",
             "data" : {
-               "genE" : 100.0
+               "outE" : 100.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Generator.lua"
          },
@@ -102,9 +100,7 @@
          "scripted" : {
             "classname" : "Switch",
             "data" : {
-               "lossE" : 0.50,
-               "maxE" : 0.0,
-               "minE" : 1.0
+               "consumptionE" : 1.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Switch.lua"
          },
@@ -153,10 +149,9 @@
             "classname" : "Accumulator",
             "data" : {
                "capacityE" : 500000.0,
-               "genE" : 50.0,
-               "lossE" : 0.0,
-               "maxE" : 100.0,
-               "minE" : 0.0
+               "consumptionE" : 50.0,
+               "isSafe" : true,
+               "outE" : 50.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
          },
