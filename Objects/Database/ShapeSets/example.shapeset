@@ -150,7 +150,6 @@
             "data" : {
                "capacityE" : 500000.0,
                "consumptionE" : 50.0,
-               "isSafe" : true,
                "outE" : 50.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
@@ -216,35 +215,6 @@
          },
          "stackSize" : 10,
          "uuid" : "a35fc606-f1d6-478d-89c9-713de859897b"
-      },
-      {
-         "color" : "4bffb5",
-         "flammable" : false,
-         "hull" : {
-            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_resources_circuitboard.obj",
-            "x" : 2,
-            "y" : 1,
-            "z" : 2
-         },
-         "name" : "Logic To E Converter",
-         "physicsMaterial" : "Metal",
-         "ratings" : {
-            "buoyancy" : 3,
-            "density" : 4,
-            "durability" : 2,
-            "friction" : 6
-         },
-         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/resource/obj_resource_cuircuitboard.rend",
-         "rotationSet" : "PropYZ",
-         "scripted" : {
-            "classname" : "Logic2EConverter",
-            "data" : {
-               "consumptionE" : 1.0
-            },
-            "filename" : "$CONTENT_DATA/Scripts/Logic2EConverter.lua"
-         },
-         "stackSize" : 10,
-         "uuid" : "3b99186b-85fc-4164-81a1-07d97e029634"
       }
    ]
 }

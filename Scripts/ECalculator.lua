@@ -63,18 +63,25 @@ function ECalculator:sv_calculate()
 
             for i, v2 in ipairs(visited) do
                 if v2 == obj.id then
-                    self:sv_destroyComponent(obj)
+                    --self:sv_destroyComponent(obj)
                     goto continue
                 end
             end
             table.insert(visited, obj.id)
 
             if obj.id ~= v.id then
-                if obj.active then
+                if sm.event.sendToInteractable(obj, "sv_isLogic") then
                     table.insert(inCircuit, obj)
-                    sumE = sumE + obj.publicData.consumptionE
+                    if obj.active then
+                        sumE = sumE + obj.publicData.consumptionE
+                    end
                 else
-                    goto continue
+                    if obj.active then
+                        table.insert(inCircuit, obj)
+                        sumE = sumE + obj.publicData.consumptionE
+                    else
+                        goto continue
+                    end
                 end
                 if sm.event.sendToInteractable(obj, "sv_isGenerator") then
                     goto continue
@@ -91,20 +98,25 @@ function ECalculator:sv_calculate()
             end
             ::continue::
         end
-        if v.publicData.isSafe then
-            if sm.event.sendToInteractable(v, "sv_isAccumulator") then
-                local E = sumE
-                local over = v.publicData.storedE - E
-                if over < 0 then
-                    E = E + over
-                end
-                v.publicData.outE = E
-                v.publicData.storedE = v.publicData.storedE - E
+
+        if sm.event.sendToInteractable(v, "sv_isAccumulator") then
+            local E = sumE
+            local over = v.publicData.storedE - E
+            if over < 0 then
+                E = E + over
             end
+            v.publicData.outE = E
+            v.publicData.storedE = v.publicData.storedE - E
         end
 
         for k2, v2 in pairs(inCircuit) do
-            v2.publicData.E = v2.publicData.E + v2.publicData.consumptionE * v.publicData.outE / sumE
+            if sm.event.sendToInteractable(v2, "sv_isLogic") then
+                if v2.active then
+                    v2.publicData.E = v2.publicData.E + v2.publicData.consumptionE * v.publicData.outE / sumE
+                end
+            else
+                v2.publicData.E = v2.publicData.E + v2.publicData.consumptionE * v.publicData.outE / sumE
+            end
             if v2.publicData.E > v2.publicData.consumptionE * 1.5 then
                 self:sv_destroyComponent(v2)
             end

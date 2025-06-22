@@ -3,7 +3,7 @@ IGenerator = class()
 
 function IGenerator:sv_init()
     self.eCalculator = nil
-    self.interactable.publicData = {outE = self.data.outE, isSafe = self.data.isSafe or false}
+    self.interactable.publicData = {outE = self.data.outE}
 end
 
 function IGenerator:sv_register()

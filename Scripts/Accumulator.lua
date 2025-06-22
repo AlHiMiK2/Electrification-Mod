@@ -12,7 +12,7 @@ Accumulator.connectionOutput = sm.interactable.connectionType.logic
 function Accumulator:server_onCreate()
     IGenerator.sv_init(self)
     IComponent.sv_init(self)
-    self.interactable.publicData = {E = 0, consumptionE = self.data.consumptionE, outE = 0, capacityE = self.data.capacityE, storedE = 0, isSafe = self.data.isSafe or false}
+    self.interactable.publicData = {E = 0, consumptionE = self.data.consumptionE, outE = 0, capacityE = self.data.capacityE, storedE = 0}
 end
 
 function Accumulator:server_onFixedUpdate(timeStep)

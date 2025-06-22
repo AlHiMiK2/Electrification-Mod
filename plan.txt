@@ -3,7 +3,7 @@ All Light +-
 Switch +
 Button
 Radio*
-Logic Gate
+Logic Gate +
 Timer
 Totebot Heads
 Raft Shark
@@ -15,7 +15,7 @@ New:
 Generator +
 Accumulator +
 Threshold
-El To Logic Converter
+Converterы +
 Kinetic Generator
 Rotor Generator
 
