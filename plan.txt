@@ -14,8 +14,8 @@ BatteryContainer
 New:
 Generator +
 Accumulator +
-Threshold
-Converterы +
+Stabilizer
+Converter +
 Kinetic Generator
 Rotor Generator
 

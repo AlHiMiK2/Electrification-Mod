@@ -1,6 +1,7 @@
 dofile( "$SURVIVAL_DATA/Scripts/game/survival_projectiles.lua" )
 ---@class ECalculator : ToolClass
 ECalculator = class()
+ECalculator.instance = nil
 
 Circuit = {
     generators = {},
@@ -8,12 +9,7 @@ Circuit = {
 }
 
 function ECalculator:server_onCreate()
-    local players = sm.player.getAllPlayers()
-    for k, v in pairs(players) do
-        if v:getId() == 1 then
-            v.publicData = {tool = self.tool}
-        end
-    end
+    ECalculator.instance = self.tool
 end
 
 function ECalculator:sv_registerComponent(component)
@@ -63,7 +59,6 @@ function ECalculator:sv_calculate()
 
             for i, v2 in ipairs(visited) do
                 if v2 == obj.id then
-                    --self:sv_destroyComponent(obj)
                     goto continue
                 end
             end
@@ -107,6 +102,8 @@ function ECalculator:sv_calculate()
             end
             v.publicData.outE = E
             v.publicData.storedE = v.publicData.storedE - E
+        elseif sm.event.sendToInteractable(v, "sv_isStabilizer") then
+            v.publicData.outE = sumE
         end
 
         for k2, v2 in pairs(inCircuit) do
@@ -117,7 +114,7 @@ function ECalculator:sv_calculate()
             else
                 v2.publicData.E = v2.publicData.E + v2.publicData.consumptionE * v.publicData.outE / sumE
             end
-            if v2.publicData.E > v2.publicData.consumptionE * 1.5 then
+            if v2.publicData.E > v2.publicData.consumptionE * 2.1 then
                 self:sv_destroyComponent(v2)
             end
         end

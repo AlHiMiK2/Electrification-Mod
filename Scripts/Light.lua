@@ -41,6 +41,7 @@ end
 
 function Light:sv_lightStrengthChanged(value)
     self.sv_intensity = value
+    self.interactable.publicData.consumptionE = self.data.consumptionE * value * 0.1
     self:sv_updateStorage()
 end
 

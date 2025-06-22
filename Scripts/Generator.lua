@@ -13,13 +13,13 @@ function Generator:server_onCreate()
     IGenerator.sv_init(self)
 end
 
-function Generator:server_onDestroy()
-    IGenerator.sv_deregister(self)
-end
-
 function Generator:server_onFixedUpdate(timeStep)
     if self.eCalculator == nil then
         IGenerator.sv_register(self)
         return
     end
+end
+
+function Generator:server_onDestroy()
+    IGenerator.sv_deregister(self)
 end
