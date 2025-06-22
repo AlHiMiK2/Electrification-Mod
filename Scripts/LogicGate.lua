@@ -1,8 +1,9 @@
-dofile("$CONTENT_DATA/Scripts/LogicReceiver.lua")
-dofile("$CONTENT_DATA/Scripts/Sender.lua")
+dofile("$CONTENT_DATA/Scripts/IComponent.lua")
+dofile("$CONTENT_DATA/Scripts/ILogic.lua")
 dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
+dofile( "$SURVIVAL_DATA/Scripts/game/survival_projectiles.lua" )
 ---@class LogicGate : LogicReceiver, LogicSender
-LogicGate = class(_wm_class(LogicReceiver, LogicSender))
+LogicGate = class(_wm_class(IComponent, ILogic))
 LogicGate.maxChildCount = -1
 LogicGate.maxParentCount = -1
 LogicGate.connectionInput = sm.interactable.connectionType.logic
@@ -11,67 +12,80 @@ LogicGate.colorNormal = sm.color.new("#2770bf")
 LogicGate.colorHighlight = sm.color.new("#4188d6")
 
 function LogicGate:server_onCreate()
-    LogicReceiver.sv_init(self, false)
+    IComponent.sv_init(self)
+    ILogic.sv_init(self)
+    self.interactable.active = true
     self.mode = 0
     if self.storage:load() ~= nil then
         self.mode = self.storage:load().mode
     else
         self.mode = 0
     end
-    self.network:setClientData({mode = self.mode, isPowered = self.sv.isPowered})
+    self.network:setClientData({mode = self.mode, logic = false})
 end
 
 function LogicGate:server_onFixedUpdate()
-    if not LogicReceiver.sv_checkSender(self) then
-        LogicReceiver.sv_receiveE(self, {E = 0, logic = false})
+    if self.eCalculator == nil then
+        IComponent.sv_register(self)
+        return
     end
-    if self.needSync then
-        self.needSync = false
-        self.network:setClientData({mode = self.mode, isPowered = self.sv.isPowered})
+    local isPowered = self.interactable.publicData.E >= self.interactable.publicData.consumptionE * 0.5
+
+    if not isPowered then
+        self.interactable.publicData.logic = false
+        self.network:setClientData({mode = self.mode, logic = false})
+        return
     end
+
     local parents = self.interactable:getParents(sm.interactable.connectionType.logic)
     if #parents == 0 then
-        self.interactable.active = false
+        self.interactable.publicData.logic = false
+        self.network:setClientData({mode = self.mode, logic = false})
         return
-    else
-        self.interactable.active = true
     end
-    local activeSum = 0
+    local activeCount = 0
+    local logicCount = 0
     for k, v in pairs(parents) do
-        if v.active then
-            activeSum = activeSum + 1
+        if sm.event.sendToInteractable(v, "sv_isLogic") then
+            logicCount = logicCount + 1
+            if v.publicData.logic then
+                activeCount = activeCount + 1
+            end
+        else
+            local params = { lootUuid = self.shape.uuid, lootQuantity = 1, epic = false }
+            sm.projectile.shapeCustomProjectileAttack( params, projectile_loot, 0, sm.vec3.new( 0, 0, 0 ), sm.vec3.new(1, 0, 0), self.shape, 0 )
+            self.shape:destroyShape(0)
         end
     end
     if self.mode == 0 then
-        self.sv.logic = activeSum == #parents
+        self.interactable.publicData.logic = activeCount == logicCount
     elseif self.mode == 1 then
-        self.sv.logic = activeSum > 0
+        self.interactable.publicData.logic = activeCount > 0
     elseif self.mode == 2 then
-        self.sv.logic = activeSum % 2 == 1
+        self.interactable.publicData.logic = activeCount % 2 == 1
     elseif self.mode == 3 then
-        self.sv.logic = activeSum ~= #parents
+        self.interactable.publicData.logic = activeCount ~= logicCount
     elseif self.mode == 4 then
-        self.sv.logic = activeSum <= 0
+        self.interactable.publicData.logic = activeCount <= 0
     else
-       self.sv.logic = activeSum % 2 == 0
+        self.interactable.publicData.logic = activeCount % 2 == 0
     end
-    self.network:setClientData({mode = self.mode, isPowered = self.sv.isPowered})
-    if self.sv.isPowered then
-        LogicSender.sv_send(self, self.sv.E, self.sv.logic)
-    else
-        LogicSender.sv_send(self, 0, false)
-    end
+    self.network:setClientData({mode = self.mode, logic = self.interactable.publicData.logic})
 end
 
 function LogicGate:sv_saveMode(mode)
     self.mode = mode
-    self.network:setClientData({mode = self.mode, isPowered = self.sv.isPowered})
+    self.network:setClientData({mode = self.mode, logic = self.interactable.publicData.logic})
     self.storage:save({mode = self.mode})
+end
+
+function LogicGate:server_onDestroy()
+    IComponent.sv_deregister(self)
 end
 
 function LogicGate:client_onCreate()
     self.cl_mode = 0
-    self.cl_isPowered = false
+    self.cl_logic = false
 end
 
 function LogicGate:client_onDestroy()
@@ -132,7 +146,7 @@ function LogicGate:client_onInteract(character, state )
 end
 
 function LogicGate:client_onFixedUpdate(deltaTime)
-    if self.cl_isPowered then
+    if self.cl_logic then
         self.interactable:setUvFrameIndex(6 + self.cl_mode)
     else
         self.interactable:setUvFrameIndex(0 + self.cl_mode)
@@ -141,5 +155,5 @@ end
 
 function LogicGate:client_onClientDataUpdate(data)
     self.cl_mode = data.mode
-    self.cl_isPowered = data.isPowered
+    self.cl_logic = data.logic
 end

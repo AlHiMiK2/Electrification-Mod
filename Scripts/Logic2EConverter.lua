@@ -1,5 +1,8 @@
----@class Logic2EConverter : LogicReceiver, Sender
-Logic2EConverter = class(_wm_class(LogicReceiver, Sender))
+dofile("$CONTENT_DATA/Scripts/IComponent.lua")
+dofile("$CONTENT_DATA/Scripts/ILogic.lua")
+dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
+---@class Logic2EConverter : IComponent, ILogic
+Logic2EConverter = class(_wm_class(IComponent, ILogic))
 
 Logic2EConverter.maxChildCount = -1
 Logic2EConverter.maxParentCount = 1
@@ -9,20 +12,29 @@ Logic2EConverter.colorNormal = sm.color.new("#2770bf")
 Logic2EConverter.colorHighlight = sm.color.new("#4188d6")
 
 function Logic2EConverter:server_onCreate()
-    LogicReceiver.sv_init(self, false)
+    IComponent.sv_init(self)
+    ILogic.sv_init(self)
+    self.interactable.active = true
 end
 
-function Logic2EConverter:server_onFixedUpdate()
-    if not LogicReceiver.sv_checkSender(self) then
-        LogicReceiver.sv_receiveE(self, 0)
+function Logic2EConverter:server_onFixedUpdate(timeStep)
+    if self.eCalculator == nil then
+        IComponent.sv_register(self)
+        return
     end
-    if self.sv.isPowered then
-        if self.sv.logic then
-            Sender.sv_send(self, self.sv.E)
+    local parent = self.interactable:getSingleParent()
+
+    if parent then
+        if sm.event.sendToInteractable(parent, "sv_isLogic") then
+            self.interactable.active = parent.publicData.logic
         else
-            Sender.sv_send(self, 0)
+            local params = { lootUuid = self.shape.uuid, lootQuantity = 1, epic = false }
+            sm.projectile.shapeCustomProjectileAttack( params, projectile_loot, 0, sm.vec3.new( 0, 0, 0 ), sm.vec3.new(1, 0, 0), self.shape, 0 )
+            self.shape:destroyShape(0)
         end
-    else
-        Sender.sv_send(self, 0)
     end
+end
+
+function Logic2EConverter:server_onDestroy()
+    IComponent.sv_deregister(self)
 end

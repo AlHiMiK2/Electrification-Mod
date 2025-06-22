@@ -1,7 +1,7 @@
 dofile( "$SURVIVAL_DATA/Scripts/game/survival_projectiles.lua" )
 ---@class ECalculator : ToolClass
 ECalculator = class()
---interactables
+
 Circuit = {
     generators = {},
     components = {}
@@ -92,8 +92,15 @@ function ECalculator:sv_calculate()
             ::continue::
         end
         if v.publicData.isSafe then
-            v.publicData.outE = math.min(v.publicData.outE, sumE)
-            sm.event.sendToInteractable(v, "sv_setOutE", sumE)
+            if sm.event.sendToInteractable(v, "sv_isAccumulator") then
+                local E = sumE
+                local over = v.publicData.storedE - E
+                if over < 0 then
+                    E = E + over
+                end
+                v.publicData.outE = E
+                v.publicData.storedE = v.publicData.storedE - E
+            end
         end
 
         for k2, v2 in pairs(inCircuit) do
@@ -108,5 +115,5 @@ end
 function ECalculator:sv_destroyComponent(component)
     local params = { lootUuid = component.shape.uuid, lootQuantity = 1, epic = false }
     sm.projectile.shapeCustomProjectileAttack( params, projectile_loot, 0, sm.vec3.new( 0, 0, 0 ), sm.vec3.new(1, 0, 0), component.shape, 0 )
-    component.shape:destroyShape()
+    component.shape:destroyShape(0)
 end

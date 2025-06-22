@@ -25,17 +25,9 @@ function Accumulator:server_onFixedUpdate(timeStep)
     self.interactable.active = self.interactable.publicData.storedE <= self.interactable.publicData.capacityE
 end
 
-function Accumulator:sv_setOutE(sumE)
-    local E = sumE
-    local over = self.interactable.publicData.storedE - E
-    if over < 0 then
-        E = E + over
-    end
-    self.interactable.publicData.outE = E
-    self.interactable.publicData.storedE = self.interactable.publicData.storedE - E
-end
-
 function Accumulator:server_onDestroy()
     IGenerator.sv_deregister(self)
     IComponent.sv_deregister(self)
 end
+
+function Accumulator:sv_isAccumulator() end
