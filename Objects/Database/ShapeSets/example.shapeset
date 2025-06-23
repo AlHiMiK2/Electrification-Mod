@@ -68,9 +68,9 @@
          "scripted" : {
             "classname" : "Accumulator",
             "data" : {
-               "capacityE" : 30000.0,
-               "consumptionE" : 10000.0,
-               "outE" : 10000.0
+               "capacityE" : 1000100.0,
+               "consumptionE" : 1000000.0,
+               "outE" : 1000000.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
          },
@@ -255,7 +255,7 @@
          "scripted" : {
             "classname" : "Accumulator",
             "data" : {
-               "capacityE" : 300.0,
+               "capacityE" : 101.0,
                "consumptionE" : 100.0,
                "outE" : 100.0
             },
@@ -410,7 +410,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 7.0,
                "effect" : "FloodLight",
                "maxIntensity" : 1.50
             },
@@ -458,7 +458,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 15.0,
                "effect" : "FactoryLight",
                "maxIntensity" : 1.50
             },
@@ -505,7 +505,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 7.0,
                "effect" : "PackingtableLight",
                "maxIntensity" : 1.50
             },
@@ -552,7 +552,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 20.0,
                "effect" : "FluorescentLight",
                "maxIntensity" : 1.50
             },
@@ -615,7 +615,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 30.0,
                "effect" : "AreaLight",
                "maxIntensity" : 1.50
             },
@@ -678,7 +678,7 @@
          "scripted" : {
             "classname" : "Light",
             "data" : {
-               "consumptionE" : 10.0,
+               "consumptionE" : 15.0,
                "effect" : "PosterLight",
                "maxIntensity" : 1.50
             },
