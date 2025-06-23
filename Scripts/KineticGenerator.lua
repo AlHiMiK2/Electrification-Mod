@@ -3,10 +3,10 @@ dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
 ---@class KineticGenerator : IGenerator
 KineticGenerator = class(IGenerator)
 
-KineticGenerator.maxParentCount = -1
+KineticGenerator.maxParentCount = 0
 KineticGenerator.maxChildCount = -1
 KineticGenerator.connectionInput = sm.interactable.connectionType.logic
-KineticGenerator.connectionOutput = sm.interactable.connectionType.logic
+KineticGenerator.connectionOutput = sm.interactable.connectionType.null
 KineticGenerator.CollisionDamage = 1000
 KineticGenerator.ExpolisonDamage = 25
 
