@@ -220,13 +220,13 @@
       },
       {
          "color" : "79859c",
-         "flammable" : false,
-         "hull" : {
-            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_warehouse_fancube.obj",
-            "x" : 1,
-            "y" : 1,
-            "z" : 1
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 1,
+            "diameter" : 1,
+            "margin" : 0
          },
+         "flammable" : false,
          "name" : "obj_warehouse_fancube",
          "physicsMaterial" : "Metal",
          "ratings" : {
