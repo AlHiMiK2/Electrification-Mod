@@ -69,7 +69,7 @@
             "classname" : "Accumulator",
             "data" : {
                "capacityE" : 30000.0,
-               "consumptionE" : 100000.0,
+               "consumptionE" : 10000.0,
                "outE" : 10000.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
