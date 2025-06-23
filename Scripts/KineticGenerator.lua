@@ -5,8 +5,8 @@ KineticGenerator = class(IGenerator)
 
 KineticGenerator.maxParentCount = 0
 KineticGenerator.maxChildCount = -1
-KineticGenerator.connectionInput = sm.interactable.connectionType.logic
-KineticGenerator.connectionOutput = sm.interactable.connectionType.null
+KineticGenerator.connectionInput = sm.interactable.connectionType.null
+KineticGenerator.connectionOutput = sm.interactable.connectionType.logic
 KineticGenerator.CollisionDamage = 1000
 KineticGenerator.ExpolisonDamage = 25
 
