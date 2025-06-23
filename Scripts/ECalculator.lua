@@ -64,6 +64,9 @@ function ECalculator:sv_calculate()
             end
             table.insert(visited, obj.id)
 
+            if obj.type ~= "scripted" then
+                goto continue
+            end
             if obj.id ~= v.id then
                 if sm.event.sendToInteractable(obj, "sv_isLogic") then
                     table.insert(inCircuit, obj)
