@@ -93,7 +93,6 @@ function ECalculator:sv_calculate()
             end
             ::continue::
         end
-
         if sm.event.sendToInteractable(v, "sv_isAccumulator") then
             local E = sumE
             local over = v.publicData.storedE - E
@@ -101,9 +100,7 @@ function ECalculator:sv_calculate()
                 E = E + over
             end
             v.publicData.outE = E
-            v.publicData.storedE = v.publicData.storedE - E
-        elseif sm.event.sendToInteractable(v, "sv_isStabilizer") then
-            v.publicData.outE = sumE
+            v.publicData.storedE = v.publicData.storedE - v.publicData.outE
         end
 
         for k2, v2 in pairs(inCircuit) do

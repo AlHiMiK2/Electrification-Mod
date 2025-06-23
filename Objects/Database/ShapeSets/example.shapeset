@@ -207,14 +207,61 @@
          "renderable" : "$SURVIVAL_DATA/Objects/Renderable/resource/obj_resource_cuircuitboard.rend",
          "rotationSet" : "PropYZ",
          "scripted" : {
-            "classname" : "Stabilizer",
+            "classname" : "Accumulator",
             "data" : {
-               "consumptionE" : 100.0
+               "capacityE" : 300.0,
+               "consumptionE" : 100.0,
+               "outE" : 100.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Stabilizer.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
          },
          "stackSize" : 10,
          "uuid" : "f152e4df-bc40-44fb-8d20-3b3ff70cdfe3"
+      },
+      {
+         "color" : "79859c",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_warehouse_fancube.obj",
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "obj_warehouse_fancube",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/warehouse/obj_warehouse_fancube.mesh",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_fan_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_fan_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_fan_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropYmmNegYmmZ",
+         "scripted" : {
+            "classname" : "RotorGenerator",
+            "data" : {
+               "outEMultiply" : 5.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/RotorGenerator.lua"
+         },
+         "stackSize" : 10,
+         "uuid" : "414854a9-77bc-48aa-a9d5-0c7cd213e4df"
       }
    ]
 }

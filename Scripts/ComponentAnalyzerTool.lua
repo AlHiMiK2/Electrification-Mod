@@ -1,6 +1,5 @@
 dofile "$GAME_DATA/Scripts/game/AnimationUtil.lua"
 dofile "$SURVIVAL_DATA/Scripts/util.lua"
-dofile("$CONTENT_DATA/Scripts/Receiver.lua")
 
 ---@class ComponentAnalyzerTool : ToolClass
 ---@field isLocal boolean

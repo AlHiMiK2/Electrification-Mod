@@ -14,7 +14,7 @@ BatteryContainer
 New:
 Generator +
 Accumulator +
-Stabilizer
+Stabilizer +
 Converter +
 Kinetic Generator
 Rotor Generator
