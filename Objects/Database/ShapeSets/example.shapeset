@@ -33,6 +33,52 @@
       },
       {
          "box" : {
+            "x" : 4,
+            "y" : 7,
+            "z" : 2
+         },
+         "color" : "0d7308",
+         "flammable" : false,
+         "name" : "obj_fittings_powerstation",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 7,
+            "durability" : 6,
+            "friction" : 7
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/fittings/obj_fittings_powerstation.mesh",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/fittings/obj_fittings_powerstation_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/fittings/obj_fittings_powerstation_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/fittings/obj_fittings_powerstation_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropYZ",
+         "scripted" : {
+            "classname" : "Accumulator",
+            "data" : {
+               "capacityE" : 30000.0,
+               "consumptionE" : 100000.0,
+               "outE" : 10000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
+         },
+         "sticky" : "-Y+Y-Z",
+         "uuid" : "40c5b3fd-1ac4-47f4-ae61-503e14baf20f"
+      },
+      {
+         "box" : {
             "x" : 3,
             "y" : 4,
             "z" : 1
@@ -277,8 +323,8 @@
          "previewRotation" : [ 0, 0, 1, 1, 0, 0, 0, 1, 0 ],
          "ratings" : {
             "buoyancy" : 4,
-            "density" : 9,
-            "durability" : 4,
+            "density" : 5,
+            "durability" : 9,
             "friction" : 3
          },
          "renderable" : {
