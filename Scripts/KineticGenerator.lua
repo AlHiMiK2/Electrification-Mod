@@ -42,10 +42,10 @@ end
 
 function KineticGenerator:server_onCollision(other, position, selfPointVelocity, otherPointVelocity, normal)
     local damage
-    if type(other) == "nil" then
-        damage = (selfPointVelocity * self.shape.body.mass):length() / self.CollisionDamage
-    else
+    if type(other) == "Shape" then
         damage = (selfPointVelocity * self.shape.body.mass + otherPointVelocity * other.body.mass):length() / self.CollisionDamage
+    else
+        damage = (selfPointVelocity * self.shape.body.mass):length() / self.CollisionDamage
     end
     self:sv_storeE(damage)
 end
