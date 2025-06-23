@@ -1,6 +1,8 @@
-Replace:
+Add List:
 All Light +-
 Switch +
+Controller
+Electric Engine
 Button
 Radio*
 Logic Gate +
@@ -10,12 +12,10 @@ Raft Shark
 Beacon
 Pump
 BatteryContainer
-
-New:
 Generator +
 Accumulator +
 Stabilizer +
 Converter +
 Kinetic Generator
-Rotor Generator
+Rotor Generator +
 

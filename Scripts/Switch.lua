@@ -30,6 +30,16 @@ function Switch:sv_switch()
     self.interactable.active = not self.interactable.active
 end
 
+function Switch:client_onAction(action, state)
+    if state then
+        self.network:sendToServer("sv_switch")
+        local childrens = self.interactable:getChildren(sm.interactable.connectionType.logic)
+        if #childrens == 0 then
+            sm.gui.displayAlertText("No connections")
+        end
+    end
+end
+
 function Switch:client_onInteract(character, state)
     if state then
         self.network:sendToServer("sv_switch")

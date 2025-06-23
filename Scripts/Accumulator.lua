@@ -4,7 +4,7 @@ dofile("$CONTENT_DATA/Scripts/Utils/utils.lua")
 ---@class Accumulator : IGenerator, IComponent
 Accumulator = class(_wm_class(IGenerator, IComponent))
 
-Accumulator.maxParentCount = 1
+Accumulator.maxParentCount = -1
 Accumulator.maxChildCount = -1
 Accumulator.connectionInput = sm.interactable.connectionType.logic
 Accumulator.connectionOutput = sm.interactable.connectionType.logic

@@ -13,7 +13,6 @@ Light.steps = 10
 
 function Light:server_onCreate()
     IComponent.sv_init(self)
-    self.interactable.active = true
     local saved = self.storage:load() or {}
     self.sv_intensity = saved.intensity or 4
     self:sv_updateStorage()
@@ -24,6 +23,7 @@ function Light:server_onFixedUpdate(timeStep)
         IComponent.sv_register(self)
         return
     end
+    self.interactable.active = true
     self.network:setClientData(self.interactable.publicData, 2)
 end
 
@@ -36,12 +36,12 @@ function Light:sv_updateStorage()
         intensity = self.sv_intensity,
     }
     self.storage:save(saved)
+    self.interactable.publicData.consumptionE = self.data.consumptionE * self.sv_intensity * 0.1
     self.network:setClientData(saved, 1)
 end
 
 function Light:sv_lightStrengthChanged(value)
     self.sv_intensity = value
-    self.interactable.publicData.consumptionE = self.data.consumptionE * value * 0.1
     self:sv_updateStorage()
 end
 
