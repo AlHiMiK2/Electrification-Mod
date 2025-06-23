@@ -277,7 +277,7 @@
          "previewRotation" : [ 0, 0, 1, 1, 0, 0, 0, 1, 0 ],
          "ratings" : {
             "buoyancy" : 4,
-            "density" : 4,
+            "density" : 9,
             "durability" : 4,
             "friction" : 3
          },
