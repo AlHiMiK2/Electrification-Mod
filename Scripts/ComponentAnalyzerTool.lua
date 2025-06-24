@@ -10,7 +10,7 @@ dofile "$SURVIVAL_DATA/Scripts/util.lua"
 ---@field tpAnimations table
 ComponentAnalyzerTool = class()
 
-local renderables =   {"$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool.rend" }
+local renderables =   {"$CONTENT_DATA/Tools/Renderables/char_connecttool.rend" }
 local renderablesTp = {"$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool_tp_animlist.rend"}
 local renderablesFp = {"$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool_fp_animlist.rend"}
 

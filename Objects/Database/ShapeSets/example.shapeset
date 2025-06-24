@@ -85,7 +85,7 @@
          "color" : "79859c",
          "flammable" : false,
          "legacyId" : 525,
-         "name" : "obj_fittings_fusebox",
+         "name" : "Creative Generator",
          "physicsMaterial" : "Metal",
          "ratings" : {
             "buoyancy" : 3,
@@ -119,6 +119,53 @@
                "outE" : 100.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Generator.lua"
+         },
+         "uuid" : "5c94f532-3624-4e03-bc28-4ef507d47aa8"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 4,
+            "z" : 1
+         },
+         "color" : "79859c",
+         "flammable" : false,
+         "legacyId" : 525,
+         "name" : "obj_fittings_fusebox",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 3,
+            "density" : 4,
+            "durability" : 6,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "includes" : [ "POSITION", "UV0", "UV1", "NORMAL", "TANGENTS" ],
+                  "mesh" : "$GAME_DATA/Objects/Mesh/fittings/obj_fittings_fusebox.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_dif.tga",
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_asg.tga",
+                           "$GAME_DATA/Objects/Textures/industrial/obj_atlas_generic_nor.tga",
+                           "$GAME_DATA/Objects/Textures/fittings/obj_fittings_fusebox_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZY",
+         "scripted" : {
+            "classname" : "Stab",
+            "data" : {
+               "consumptionE" : 100000.0,
+               "outE" : 100000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
          },
          "uuid" : "697e3b80-d3f7-4f4a-aba2-23611a45f967"
       },
@@ -254,8 +301,8 @@
          "scripted" : {
             "classname" : "Stab",
             "data" : {
-               "consumptionE" : 100.0,
-               "outE" : 100.0
+               "consumptionE" : 1000.0,
+               "outE" : 1000.0
             },
             "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
          },
