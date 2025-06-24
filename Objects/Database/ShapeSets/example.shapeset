@@ -66,12 +66,12 @@
          },
          "rotationSet" : "PropYZ",
          "scripted" : {
-            "classname" : "Stab",
+            "classname" : "Stabilizer",
             "data" : {
                "consumptionE" : 1000000.0,
                "outE" : 1000000.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Stabilizer.lua"
          },
          "sticky" : "-Y+Y-Z",
          "uuid" : "40c5b3fd-1ac4-47f4-ae61-503e14baf20f"
@@ -160,12 +160,12 @@
          },
          "rotationSet" : "PropZY",
          "scripted" : {
-            "classname" : "Stab",
+            "classname" : "Stabilizer",
             "data" : {
                "consumptionE" : 100000.0,
                "outE" : 100000.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Stabilizer.lua"
          },
          "uuid" : "697e3b80-d3f7-4f4a-aba2-23611a45f967"
       },
@@ -299,12 +299,12 @@
          "renderable" : "$SURVIVAL_DATA/Objects/Renderable/resource/obj_resource_cuircuitboard.rend",
          "rotationSet" : "PropYZ",
          "scripted" : {
-            "classname" : "Stab",
+            "classname" : "Stabilizer",
             "data" : {
                "consumptionE" : 1000.0,
                "outE" : 1000.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Stabilizer.lua"
          },
          "stackSize" : 10,
          "uuid" : "f152e4df-bc40-44fb-8d20-3b3ff70cdfe3"

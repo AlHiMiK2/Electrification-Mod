@@ -104,19 +104,9 @@ function ECalculator:sv_calculate()
             end
             v.publicData.outE = E
             v.publicData.storedE = v.publicData.storedE - v.publicData.outE
+        elseif sm.event.sendToInteractable(v, "sv_isStabilizer") then
+            v.publicData.outE = sumE
         end
-		--Romytrix Shit Edit Start
-		if sm.event.sendToInteractable(v, "sv_isStab") then
-            local E = sumE
-            local over = v.publicData.storedE - E
-            if over < 0 then
-                E = E + over
-            end
-            v.publicData.outE = E
-			v.publicData.capacityE = sumE
-            v.publicData.storedE = v.publicData.storedE - v.publicData.outE
-        end
-		--Romytrix Shit Edit End
         for k2, v2 in pairs(inCircuit) do
             if sm.event.sendToInteractable(v2, "sv_isLogic") then
                 if v2.active then
