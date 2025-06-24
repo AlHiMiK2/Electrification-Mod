@@ -66,13 +66,12 @@
          },
          "rotationSet" : "PropYZ",
          "scripted" : {
-            "classname" : "Accumulator",
+            "classname" : "Stab",
             "data" : {
-               "capacityE" : 1000100.0,
                "consumptionE" : 1000000.0,
                "outE" : 1000000.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
          },
          "sticky" : "-Y+Y-Z",
          "uuid" : "40c5b3fd-1ac4-47f4-ae61-503e14baf20f"
@@ -253,13 +252,12 @@
          "renderable" : "$SURVIVAL_DATA/Objects/Renderable/resource/obj_resource_cuircuitboard.rend",
          "rotationSet" : "PropYZ",
          "scripted" : {
-            "classname" : "Accumulator",
+            "classname" : "Stab",
             "data" : {
-               "capacityE" : 101.0,
                "consumptionE" : 100.0,
                "outE" : 100.0
             },
-            "filename" : "$CONTENT_DATA/Scripts/Accumulator.lua"
+            "filename" : "$CONTENT_DATA/Scripts/Stabilisator.lua"
          },
          "stackSize" : 10,
          "uuid" : "f152e4df-bc40-44fb-8d20-3b3ff70cdfe3"
