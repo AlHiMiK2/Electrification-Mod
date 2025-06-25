@@ -1,4 +1,26 @@
 {
+   "Button - Off" : {
+      "effectList" : [
+         {
+            "attached" : true,
+            "delay" : 0.0,
+            "name" : "event:/vehicle/triggers/trigger_switch_on",
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Button - On" : {
+      "effectList" : [
+         {
+            "attached" : true,
+            "delay" : 0.0,
+            "name" : "event:/vehicle/triggers/trigger_switch_off",
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "type" : "audio"
+         }
+      ]
+   },
    "Switch - Off" : {
       "effectList" : [
          {

@@ -209,5 +209,5 @@ function ComponentAnalyzerTool:cl_showInteractableInfo()
 			text = text.. tostring(k).. " = ".. tostring(math.floor(v * 10 + 0.5) / 10).. "	"
 		end
 	end
-	sm.gui.setInteractionText(text)
+	sm.gui.setInteractionText(text, "use")
 end

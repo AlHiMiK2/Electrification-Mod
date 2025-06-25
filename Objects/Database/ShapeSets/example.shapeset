@@ -201,6 +201,37 @@
          "uuid" : "7cf717d7-d167-4f2d-a6e7-6b2c70aa3986"
       },
       {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$GAME_DATA/Objects/Collision/obj_interactive_button.obj",
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "legacyId" : 110,
+         "name" : "obj_interactive_button",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 2,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_button.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Button",
+            "data" : {
+               "consumptionE" : 1.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Button.lua"
+         },
+         "stackSize" : 10,
+         "sticky" : "-Y",
+         "uuid" : "1e8d93a4-506b-470d-9ada-9c0a321e2db5"
+      },
+      {
          "box" : {
             "x" : 2,
             "y" : 2,
