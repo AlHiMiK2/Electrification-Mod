@@ -30,6 +30,8 @@ function Activator:server_onFixedUpdate(timeStep)
     self.interactable.active = true
     if self.interactable.publicData.E < self.interactable.publicData.consumptionE * 0.5 then
         self.interactable.power = 0
+    else
+        self.interactable.power = self.state - 1
     end
 end
 
@@ -42,7 +44,7 @@ function Activator:sv_nextState()
     if self.state > 2 then
         self.state = 0
     end
-    self.interactable.power = self.state - 1
+    self.network:setClientData(self.state)
 end
 
 function Activator:sv_prevState()
@@ -50,10 +52,20 @@ function Activator:sv_prevState()
     if self.state < 0 then
         self.state = 2
     end
-    self.interactable.power = self.state - 1
+    self.network:setClientData(self.state)
 end
 
 function Activator:sv_isActivator() end
+
+function Activator:client_canInteract(character)
+    sm.gui.setInteractionText("", sm.gui.getKeyBinding("Use", true), "Next State")
+    return true
+end
+
+function Activator:client_canTinker(character)
+    sm.gui.setInteractionText("", sm.gui.getKeyBinding("Tinker", true), "Previous State")
+    return true
+end
 
 function Activator:client_onInteract(character, state)
     if state then
@@ -68,9 +80,12 @@ function Activator:client_onTinker(character, state)
 end
 
 function Activator:client_onUpdate(dt)
-    if self.interactable.power ~= self.prevPower then
-        self.interactable:setPoseWeight(0, (self.interactable.power + 1) * 0.5)
-        print(self.interactable.power)
-        self.prevPower = self.interactable.power
+    if self.cl_state ~= self.prevState then
+        self.interactable:setPoseWeight(0, self.cl_state * 0.5)
+        self.prevState = self.cl_state
     end
+end
+
+function Activator:client_onClientDataUpdate(data, channel)
+    self.cl_state = data
 end
