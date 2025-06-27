@@ -1,0 +1,19 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/ActivatorOff.fbx",
+         "minViewSize" : 35,
+         "pose0" : "$CONTENT_DATA/Objects/Mesh/ActivatorOn.fbx",
+         "subMeshMap" : {
+            "submesh1" : {
+               "material" : "PoseAnimDifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Objects/Textures/interactive/obj_interactive_gasengine_02_dif.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/interactive/obj_interactive_gasengine_02_asg.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/interactive/obj_interactive_gasengine_02_nor.tga"
+               ]
+            }
+         }
+      }
+   ]
+}

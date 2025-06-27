@@ -18,6 +18,7 @@ function Generator:server_onFixedUpdate(timeStep)
         IGenerator.sv_register(self)
         return
     end
+    self.interactable.active = true
 end
 
 function Generator:server_onDestroy()

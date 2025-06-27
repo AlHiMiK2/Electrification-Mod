@@ -105,7 +105,15 @@ function ECalculator:sv_calculate()
             v.publicData.outE = E
             v.publicData.storedE = v.publicData.storedE - v.publicData.outE
         elseif sm.event.sendToInteractable(v, "sv_isStabilizer") then
-            v.publicData.outE = sumE
+            v.publicData.outE = sm.util.clamp(sumE, 0, v.publicData.outE)
+        elseif sm.event.sendToInteractable(v, "sv_isKineticGenerator") then
+            local E = sumE
+            local over = v.publicData.storedE - E
+            if over < 0 then
+                E = E + over
+            end
+            v.publicData.outE = E
+            v.publicData.storedE = 0
         end
         for k2, v2 in pairs(inCircuit) do
             if sm.event.sendToInteractable(v2, "sv_isLogic") then
@@ -114,6 +122,9 @@ function ECalculator:sv_calculate()
                 end
             else
                 v2.publicData.E = v2.publicData.E + v2.publicData.consumptionE * v.publicData.outE / sumE
+                if sm.event.sendToInteractable(v2, "sv_isStabilizer") then
+                    v2.publicData.outE = v2.publicData.E
+                end
             end
             if v2.publicData.E > v2.publicData.consumptionE * 2.1 then
                 self:sv_destroyComponent(v2)

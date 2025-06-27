@@ -177,7 +177,11 @@ function ComponentAnalyzerTool:client_onUnequip()
 end
 
 function ComponentAnalyzerTool:sv_getDataFromInteractable(data)
-	self.network:sendToClient(data.Player, "cl_setInteractableData", {publicData = data.Interactable.publicData, interactable = data.Interactable})
+	if data.Interactable.type == "scripted" then
+		self.network:sendToClient(data.Player, "cl_setInteractableData", {publicData = data.Interactable.publicData, interactable = data.Interactable})
+	else
+		self.network:sendToClient(data.Player, "cl_setInteractableData", {publicData = nil, interactable = data.Interactable})
+	end
 end
 
 function ComponentAnalyzerTool:client_onEquippedUpdate( primaryState, secondaryState )
@@ -202,12 +206,17 @@ function ComponentAnalyzerTool:cl_setInteractableData(data)
 end
 
 function ComponentAnalyzerTool:cl_showInteractableInfo()
-	if not sm.exists(self.target) or self.publicData == nil then return end
+	if not sm.exists(self.target) then return end
 	local text = ""
-	for k, v in pairs(self.publicData) do
-		if type(v) == "number" then
-			text = text.. tostring(k).. " = ".. tostring(math.floor(v * 10 + 0.5) / 10).. "	"
+	if self.target.type == "survivalSequence" then
+		text = "consumptionE = 100"
+	elseif self.target.type == "scripted" and self.publicData then
+		for k, v in pairs(self.publicData) do
+			if type(v) == "number" then
+				text = text.. tostring(k).. " = ".. tostring(math.floor(v * 10 + 0.5) / 10).. "	"
+			end
 		end
 	end
-	sm.gui.setInteractionText(text, "use")
+
+	sm.gui.setInteractionText(text)
 end

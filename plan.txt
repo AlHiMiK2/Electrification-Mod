@@ -3,7 +3,7 @@ All Light +-
 Switch +
 Controller
 Electric Engine
-Button
+Button +
 Radio*
 Logic Gate +
 Timer
@@ -16,6 +16,6 @@ Generator +
 Accumulator +
 Stabilizer +
 Converter +
-Kinetic Generator
+Kinetic Generator +
 Rotor Generator +
 

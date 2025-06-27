@@ -20,6 +20,7 @@ function RotorGenerator:server_onFixedUpdate(timeStep)
         return
     end
 
+    self.interactable.active = true
     self.interactable.publicData.outE = math.abs(Vector3SignedAngle(self.prevRight, self.shape.right, self.shape.up)) * self.data.outEMultiply
     self.prevRight = self.shape.right
 end

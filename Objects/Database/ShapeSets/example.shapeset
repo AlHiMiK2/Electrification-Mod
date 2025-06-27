@@ -825,6 +825,169 @@
          },
          "sticky" : "-Y",
          "uuid" : "85339a1d-e67f-4c63-94fd-4a1cf8c25810"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 1,
+            "z" : 2
+         },
+         "color" : "c36512",
+         "flammable" : false,
+         "name" : "Activator",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/Activator.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Activator",
+            "data" : {
+               "consumptionE" : 10.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Activator.lua"
+         },
+         "sticky" : "-Y",
+         "uuid" : "f0360e9d-9c72-4c1e-97d4-3722df7e8938"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "df7f01",
+         "flammable" : true,
+         "name" : "obj_interactive_electricengine_01",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 7,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_electricengine01.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "ElectricEngine",
+            "data" : {
+               "consumptionE" : 2000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
+         },
+         "uuid" : "5e5d231e-405e-4f45-9bd0-b3557dbb42eb"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "df7f01",
+         "flammable" : true,
+         "name" : "obj_interactive_electricengine_02",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 6,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_electricengine02.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "ElectricEngine",
+            "data" : {
+               "consumptionE" : 2000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
+         },
+         "uuid" : "0c9cc5bb-af2f-4023-b8d8-cd7d52a60efe"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "df7f01",
+         "flammable" : true,
+         "name" : "obj_interactive_electricengine_03",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 6,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_electricengine03.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "ElectricEngine",
+            "data" : {
+               "consumptionE" : 2000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
+         },
+         "uuid" : "56cea967-a685-494d-85ef-3aa121a0c193"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "df7f01",
+         "flammable" : false,
+         "name" : "obj_interactive_electricengine_04",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 4,
+            "durability" : 7,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_electricengine04.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "ElectricEngine",
+            "data" : {
+               "consumptionE" : 2000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
+         },
+         "uuid" : "5e57e0f7-e87c-4269-b274-146fe40e1b44"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "df7f01",
+         "flammable" : false,
+         "name" : "obj_interactive_electricengine_05",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 8,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_electricengine05.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "ElectricEngine",
+            "data" : {
+               "consumptionE" : 2000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
+         },
+         "uuid" : "22f3e797-82f5-4819-a085-c3cc28ec9025"
       }
    ]
 }

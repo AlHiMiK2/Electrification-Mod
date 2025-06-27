@@ -54,4 +54,4 @@ function KineticGenerator:server_onDestroy()
     IGenerator.sv_deregister(self)
 end
 
-function KineticGenerator:sv_isAccumulator() end
+function KineticGenerator:sv_isKineticGenerator() end
