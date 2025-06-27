@@ -72,6 +72,8 @@ function ECalculator:sv_calculate()
                     table.insert(inCircuit, obj)
                     if obj.active then
                         sumE = sumE + obj.publicData.consumptionE
+                    else
+                        goto continue
                     end
                 else
                     if obj.active then
@@ -105,7 +107,8 @@ function ECalculator:sv_calculate()
             v.publicData.outE = E
             v.publicData.storedE = v.publicData.storedE - v.publicData.outE
         elseif sm.event.sendToInteractable(v, "sv_isStabilizer") then
-            v.publicData.outE = sm.util.clamp(sumE, 0, v.publicData.outE)
+            v.publicData.consumptionE = sumE
+            v.publicData.outE = sm.util.clamp(sumE, 0, math.max(v.publicData.outE, 0.01))
         elseif sm.event.sendToInteractable(v, "sv_isKineticGenerator") then
             local E = sumE
             local over = v.publicData.storedE - E
@@ -126,7 +129,8 @@ function ECalculator:sv_calculate()
                     v2.publicData.outE = v2.publicData.E
                 end
             end
-            if v2.publicData.E > v2.publicData.consumptionE * 2.1 then
+            local maxE = v2.publicData.maxE or v2.publicData.consumptionE * 2.1
+            if v2.publicData.E > maxE then
                 self:sv_destroyComponent(v2)
             end
         end

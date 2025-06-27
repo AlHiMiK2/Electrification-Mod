@@ -1,8 +1,8 @@
 Add List:
 All Light +-
 Switch +
-Controller
-Electric Engine
+Controller +
+Electric Engine +
 Button +
 Radio*
 Logic Gate +
@@ -15,7 +15,7 @@ BatteryContainer
 Generator +
 Accumulator +
 Stabilizer +
-Converter +
+Activator +
 Kinetic Generator +
 Rotor Generator +
 

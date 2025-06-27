@@ -104,7 +104,7 @@ function Light:cl_updateLightEffect()
         local multiply = self.cl.E / self.cl.consumptionE
         self.light:setParameter("color", self.shape.color)
         self.light:setParameter("intensity", self.data.maxIntensity / Light.steps * self.intensity * multiply)
-        self.interactable:setPoseWeight(0, multiply)
+        self.interactable:setPoseWeight(0, 1)
         if not self.light:isPlaying() then
             self.light:start()
         end

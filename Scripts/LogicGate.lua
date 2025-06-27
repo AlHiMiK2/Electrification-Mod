@@ -11,7 +11,7 @@ LogicGate.colorHighlight = sm.color.new("#4188d6")
 
 function LogicGate:server_onCreate()
     IComponent.sv_init(self)
-    self.interactable.active = true
+    self.interactable.active = false
     self.mode = 0
     if self.storage:load() ~= nil then
         self.mode = self.storage:load().mode

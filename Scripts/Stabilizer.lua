@@ -12,7 +12,7 @@ Stabilizer.connectionOutput = sm.interactable.connectionType.logic
 function Stabilizer:server_onCreate()
     IGenerator.sv_init(self)
     IComponent.sv_init(self)
-    self.interactable.publicData = {E = 0, consumptionE = self.data.consumptionE, outE = 0}
+    self.interactable.publicData = {E = 0, consumptionE = self.data.consumptionE, outE = 0, maxE = self.data.consumptionE * 2.1}
 end
 
 function Stabilizer:server_onFixedUpdate(timeStep)
