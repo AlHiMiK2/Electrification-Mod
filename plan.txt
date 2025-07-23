@@ -1,17 +1,21 @@
 Add List:
+
+Seats
+Radio*
+Timer
+Totebot Heads
+Raft Shark
+Pump
+Beacon +
+BatteryContainer
 All Light +-
 Switch +
 Controller +
 Electric Engine +
 Button +
-Radio*
+Threshold + 
 Logic Gate +
-Timer
-Totebot Heads
-Raft Shark
-Beacon
-Pump
-BatteryContainer
+Sensors +
 Generator +
 Accumulator +
 Stabilizer +

@@ -341,6 +341,36 @@
          "uuid" : "f152e4df-bc40-44fb-8d20-3b3ff70cdfe3"
       },
       {
+         "color" : "4bffb5",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_resources_circuitboard.obj",
+            "x" : 2,
+            "y" : 1,
+            "z" : 2
+         },
+         "name" : "Threshold",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 3,
+            "density" : 4,
+            "durability" : 2,
+            "friction" : 6
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/resource/obj_resource_cuircuitboard.rend",
+         "rotationSet" : "PropYZ",
+         "scripted" : {
+            "classname" : "Threshold",
+            "data" : {
+               "consumptionE" : 1000.0,
+               "outE" : 1000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Threshold.lua"
+         },
+         "stackSize" : 10,
+         "uuid" : "f995f887-f840-4e9c-8e3f-f606961db33d"
+      },
+      {
          "color" : "79859c",
          "cylinder" : {
             "axis" : "Y",
@@ -988,6 +1018,34 @@
             "filename" : "$CONTENT_DATA/Scripts/ElectricEngine.lua"
          },
          "uuid" : "22f3e797-82f5-4819-a085-c3cc28ec9025"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 8,
+            "z" : 4
+         },
+         "color" : "df7f01",
+         "flammable" : false,
+         "name" : "obj_interactive_beacon",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 6,
+            "friction" : 3
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive/obj_interactive_beacon.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Beacon",
+            "data" : {
+               "consumptionE" : 1000.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Beacon.lua"
+         },
+         "sticky" : "-Y+X-X-Z+Z",
+         "uuid" : "a5985971-1f95-4373-a5d9-4ce0a3e74851"
       }
    ]
 }

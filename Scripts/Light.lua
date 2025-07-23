@@ -100,7 +100,7 @@ function Light:cl_updateLightEffect()
         self.light = sm.effect.createEffect(self.data.effect, self.interactable)
     end
     local parent = self.interactable:getSingleParent()
-    if parent and parent.active then
+    if parent and parent.active and self.cl.E > 0 then
         local multiply = self.cl.E / self.cl.consumptionE
         self.light:setParameter("color", self.shape.color)
         self.light:setParameter("intensity", self.data.maxIntensity / Light.steps * self.intensity * multiply)

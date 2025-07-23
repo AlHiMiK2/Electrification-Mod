@@ -117,6 +117,8 @@ function ECalculator:sv_calculate()
             end
             v.publicData.outE = E
             v.publicData.storedE = 0
+        elseif sm.event.sendToInteractable(v, "sv_isThreshold") then
+            v.publicData.outE = sm.util.clamp(v.publicData.E, 0, v.publicData.consumptionE)
         end
         for k2, v2 in pairs(inCircuit) do
             if sm.event.sendToInteractable(v2, "sv_isLogic") then
