@@ -1,6 +1,6 @@
 Add List:
 
-Seats
+Seats +
 Radio*
 Timer
 Totebot Heads
@@ -8,7 +8,7 @@ Raft Shark
 Pump
 Beacon +
 BatteryContainer
-All Light +-
+All Light +
 Switch +
 Controller +
 Electric Engine +

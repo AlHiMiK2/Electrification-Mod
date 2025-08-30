@@ -858,6 +858,359 @@
       },
       {
          "box" : {
+            "x" : 3,
+            "y" : 1,
+            "z" : 8
+         },
+         "color" : "df9a16",
+         "flammable" : false,
+         "name" : "obj_spaceship_ceilinglight",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 4,
+            "density" : 3,
+            "durability" : 2,
+            "friction" : 6
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/spaceship/obj_spaceship_ceilinglight_off.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/Mesh/spaceship/obj_spaceship_ceilinglight_on.fbx",
+                  "subMeshMap" : {
+                     "beamlight" : {
+                        "material" : "PoseAnimLightCone",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/lights/obj_light_headlightbeam_dif.tga",
+                           "",
+                           ""
+                        ]
+                     },
+                     "ceilinglight" : {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_ceilinglight_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_ceilinglight_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_ceilinglight_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 8.0,
+               "effect" : "FluorescentLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "-Y-Z+Z-X+X",
+         "uuid" : "47062936-5d28-43ec-81b5-8fdb619e97e4"
+      },
+      {
+         "color" : "19f088",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_manmade_signFresh.obj",
+            "x" : 5,
+            "y" : 8,
+            "z" : 1
+         },
+         "name" : "obj_manmade_freshsign",
+         "physicsMaterial" : "Wood",
+         "ratings" : {
+            "buoyancy" : 4,
+            "density" : 2,
+            "durability" : 1,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/manmade/obj_manmade_freshsign.rend",
+         "rotationSet" : "PropZ",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 3.0,
+               "effect" : "FreshLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "-Z",
+         "uuid" : "27c00cfb-4e7f-45fc-a037-f9a941464ce6"
+      },
+      {
+         "color" : "e17f51",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_manmade_shacklight.obj",
+            "x" : 2,
+            "y" : 2,
+            "z" : 2
+         },
+         "name" : "obj_manmade_shacklight",
+         "physicsMaterial" : "Plastic",
+         "ratings" : {
+            "buoyancy" : 4,
+            "density" : 2,
+            "durability" : 2,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/manmade/obj_manmade_shacklight_off.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/Mesh/manmade/obj_manmade_shacklight_on.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/manmade/obj_manmade_atlas01_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/manmade/obj_manmade_atlas01_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/manmade/obj_manmade_atlas01_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropNegY",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 5.0,
+               "effect" : "ShackLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "+Y",
+         "uuid" : "ebefa387-fe4a-4839-bdd9-b6b4da39368f"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "c36512",
+         "flammable" : false,
+         "name" : "obj_warehouse_doorframelight",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 5,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/warehouse/obj_warehouse_doorframelight_off.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/Mesh/warehouse/obj_warehouse_doorframelight_on.fbx",
+                  "subMeshList" : [
+                     {
+                        "idx" : 0,
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_doorframelight_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_doorframelight_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_doorframelight_nor.tga"
+                        ]
+                     },
+                     {
+                        "idx" : 2,
+                        "material" : "PoseAnimLightCone",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/lights/obj_light_horizontalflare_dif.tga",
+                           "",
+                           ""
+                        ]
+                     },
+                     {
+                        "idx" : 1,
+                        "material" : "PoseAnimLightCone",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/lights/obj_light_headlightbeam_dif.tga",
+                           "",
+                           ""
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropYmZX",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 8.0,
+               "effect" : "FluorescentLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "-Y-Z+Z-X+X",
+         "uuid" : "abaef792-741e-4c6b-8e79-02461a37b035"
+      },
+      {
+         "box" : {
+            "x" : 8,
+            "y" : 4,
+            "z" : 2
+         },
+         "color" : "4c6fe3",
+         "density" : 500.0,
+         "name" : "obj_warehouse_encryptorsign_destruction",
+         "physicsMaterial" : "Metal",
+         "ratings" : {},
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/mesh/warehouse/obj_warehouse_encryptorsign_pose1.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/mesh/warehouse/obj_warehouse_encryptorsign_pose0.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_destruction_dif.TGA",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_destruction_asg.TGA",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_nor.TGA"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 2.0,
+               "effect" : "EncryptorLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "uuid" : "cc454365-7262-4953-a190-4bead4f4a260"
+      },
+      {
+         "box" : {
+            "x" : 8,
+            "y" : 4,
+            "z" : 2
+         },
+         "color" : "c36512",
+         "density" : 500.0,
+         "name" : "obj_warehouse_encryptorsign_connection",
+         "physicsMaterial" : "Metal",
+         "ratings" : {},
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/mesh/warehouse/obj_warehouse_encryptorsign_pose1.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/mesh/warehouse/obj_warehouse_encryptorsign_pose0.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_connection_dif.TGA",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_connection_asg.TGA",
+                           "$SURVIVAL_DATA/Objects/Textures/warehouse/obj_warehouse_encryptorsign_nor.TGA"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 2.0,
+               "effect" : "EncryptorLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "uuid" : "ba79e3c0-914f-46ff-874b-243df5589e3c"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "color" : "ebb100",
+         "flammable" : false,
+         "name" : "obj_construction_light",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 5,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/construction/obj_construction_light_off.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/Mesh/construction/obj_construction_light_on.fbx",
+                  "subMeshMap" : {
+                     "beam" : {
+                        "material" : "PoseAnimLightCone",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/lights/obj_light_headlightbeam_dif.tga",
+                           "",
+                           ""
+                        ]
+                     },
+                     "constructionlight" : {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light_nor.tga"
+                        ]
+                     },
+                     "constructionlight02" : {
+                        "material" : "PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light02_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light02_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/construction/obj_construction_light02_nor.tga"
+                        ]
+                     },
+                     "flare" : {
+                        "material" : "PoseAnimLightCone",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/lights/obj_light_headlightflare_dif.tga",
+                           "",
+                           ""
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropYZ",
+         "scripted" : {
+            "classname" : "Light",
+            "data" : {
+               "consumptionE" : 5.0,
+               "effect" : "ConstructionLight",
+               "maxIntensity" : 1.50
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Light.lua"
+         },
+         "sticky" : "+Y-Y+X-X-Z",
+         "uuid" : "da6e54df-a223-4a0e-b42f-ddeddd33f5b3"
+      },
+      {
+         "box" : {
             "x" : 2,
             "y" : 1,
             "z" : 2
@@ -1046,6 +1399,1404 @@
          },
          "sticky" : "-Y+X-X-Z+Z",
          "uuid" : "a5985971-1f95-4373-a5d9-4ce0a3e74851"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driverseat_01.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 6
+         },
+         "name" : "obj_interactive_driverseat_01",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driverseat01.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSeat",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.0640,
+                        "z" : -0.5440
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 45.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "77c2687c-2e13-4df8-996a-96fb26d75ee0"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driverseat_02.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 6
+         },
+         "name" : "obj_interactive_driverseat_02",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driverseat02.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSeat",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.0640,
+                        "z" : -0.5440
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 45.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "efbf45f8-62ec-4541-9eb1-d529966f6a29"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driverseat_03.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 6
+         },
+         "name" : "obj_interactive_driverseat_03",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 4,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driverseat03.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSeat",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.0640,
+                        "z" : -0.5440
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 45.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "c3ef3008-9367-4ab7-813a-24195d63e5a3"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driverseat_04.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 6
+         },
+         "name" : "obj_interactive_driverseat_04",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 4,
+            "durability" : 6,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driverseat04.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSeat",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.0640,
+                        "z" : -0.5440
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 45.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "d30dcd12-ec39-43b9-a115-44c08e1b9091"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driverseat_05.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 6
+         },
+         "name" : "obj_interactive_driverseat_05",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 7,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driverseat05.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSeat",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.0640,
+                        "z" : -0.5440
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.1720,
+                        "y" : 0.9680,
+                        "z" : 0.9680
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 45.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "ffa3a47e-fc0d-4977-802f-bd15683bbe5c"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driversaddle_01.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 5
+         },
+         "name" : "obj_interactive_driversaddle_01",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driversaddle01.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSaddle",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.3840,
+                        "z" : -0.30
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 25.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "7d601a5a-796d-4cae-be88-b47479d38d11"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driversaddle_02.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 5
+         },
+         "name" : "obj_interactive_driversaddle_02",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 5,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driversaddle02.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSaddle",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.3840,
+                        "z" : -0.30
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 25.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "bb2ed406-f0d3-4fd6-b3f9-7caadfa8e4e4"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driversaddle_03.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 5
+         },
+         "name" : "obj_interactive_driversaddle_03",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 4,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driversaddle03.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSaddle",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.3840,
+                        "z" : -0.30
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 25.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "6953b17e-0a38-4107-8c56-5ee97e68bee3"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driversaddle_04.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 5
+         },
+         "name" : "obj_interactive_driversaddle_04",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 4,
+            "durability" : 6,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driversaddle04.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSaddle",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.3840,
+                        "z" : -0.30
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 25.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "41960868-6245-47b5-97c4-f446e199812f"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_driversaddle_05.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 5
+         },
+         "name" : "obj_interactive_driversaddle_05",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 7,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_driversaddle05.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DriverSaddle",
+            "data" : {
+               "consumptionE" : 20.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/DriverSeat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.3840,
+                        "z" : -0.30
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.20,
+                        "y" : 1.20,
+                        "z" : 1.70
+                     },
+                     "steers" : true
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            },
+            "steering" : {
+               "steerAngle" : 25.0
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "9dd1ccea-1e44-430d-b706-3ff45416583e"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_seat_01.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "obj_interactive_seat_01",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_seat01.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Seat",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.20,
+                        "z" : 0.250
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "3b972f2f-30c7-4a5e-a100-5e257e62295d"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_seat_02.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "obj_interactive_seat_02",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_seat02.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Seat",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.20,
+                        "z" : 0.250
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "2b9c6e87-1b75-4a57-8979-74d9f95668ba"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_seat_03.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "obj_interactive_seat_03",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_seat03.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Seat",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.20,
+                        "z" : 0.250
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "ebe2782e-a4f5-4d91-83cc-db110179393b"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_seat_04.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "obj_interactive_seat_04",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 6,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_seat04.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Seat",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.20,
+                        "z" : 0.250
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "46465697-ed36-4720-ba8a-08c568b4e36c"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_seat_05.obj",
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "obj_interactive_seat_05",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 7,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_seat05.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Seat",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : -0.20,
+                        "z" : 0.250
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -1.0,
+                        "y" : -0.250,
+                        "z" : 1.50
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/seat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "703ca746-d802-4e76-b443-4881e83afb73"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_saddle_01.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "name" : "obj_interactive_saddle_01",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 3,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_saddle01.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Saddle",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.360,
+                        "z" : 0.80
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "2d3016f7-febe-416e-93bc-41d80ca3910d"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_saddle_02.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "name" : "obj_interactive_saddle_02",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_saddle02.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Saddle",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.360,
+                        "z" : 0.80
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "c39b3537-d9b2-45f8-b2ea-0e9002c896d9"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : true,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_saddle_03.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "name" : "obj_interactive_saddle_03",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_saddle03.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Saddle",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.360,
+                        "z" : 0.80
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "797e07a3-6d56-4b74-949b-9492c7946e0d"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_saddle_04.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "name" : "obj_interactive_saddle_04",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 6,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_saddle04.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Saddle",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.360,
+                        "z" : 0.80
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "7516f5b8-9a15-4606-92bb-ea9a96a16594"
+      },
+      {
+         "color" : "df7f01",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_interactive_saddle_05.obj",
+            "x" : 3,
+            "y" : 4,
+            "z" : 3
+         },
+         "name" : "obj_interactive_saddle_05",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 2,
+            "density" : 3,
+            "durability" : 7,
+            "friction" : 5
+         },
+         "renderable" : "$SURVIVAL_DATA/Objects/Renderable/interactive_upgradeable/obj_interactiveupgradeable_saddle05.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "Saddle",
+            "data" : {
+               "consumptionE" : 5.0,
+               "maxE" : 200.0
+            },
+            "filename" : "$CONTENT_DATA/Scripts/Seat.lua",
+            "seat" : {
+               "bones" : [
+                  {
+                     "name" : "Hips",
+                     "offset" : {
+                        "x" : 0.0,
+                        "y" : 0.360,
+                        "z" : 0.80
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "LeftForeArm",
+                     "offset" : {
+                        "x" : 0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  },
+                  {
+                     "freeRotation" : true,
+                     "name" : "RightForeArm",
+                     "offset" : {
+                        "x" : -0.920,
+                        "y" : 0.4560,
+                        "z" : 2.0240
+                     }
+                  }
+               ],
+               "enterAudio" : "Seat seated",
+               "exitAudio" : "Seat unseated",
+               "ragdollFile" : "$GAME_DATA/Character/bikeseat_ragdoll.json"
+            }
+         },
+         "sticky" : "-Y",
+         "uuid" : "42f70341-207d-4e9d-b8ed-37962603a926"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 3,
+            "z" : 3
+         },
+         "color" : "f1a400",
+         "flammable" : false,
+         "name" : "obj_container_battery",
+         "physicsMaterial" : "Metal",
+         "pipe" : {
+            "openings" : [
+               {
+                  "side" : "-X",
+                  "x" : -2.0,
+                  "y" : 0,
+                  "z" : 0
+               },
+               {
+                  "side" : "Y",
+                  "x" : 0.50,
+                  "y" : 1.50,
+                  "z" : 0
+               }
+            ]
+         },
+         "ratings" : {
+            "buoyancy" : 6,
+            "density" : 5,
+            "durability" : 6,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/containers/obj_containers_battery.fbx",
+                  "pose0" : "$SURVIVAL_DATA/Objects/Mesh/containers/obj_containers_battery_pose0.fbx",
+                  "pose1" : "$SURVIVAL_DATA/Objects/Mesh/containers/obj_containers_battery_pose1.fbx",
+                  "subMeshMap" : {
+                     "connectionpoint" : {
+                        "material" : "2PoseAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_interactive_container_connectorpoint_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_interactive_container_connectorpoint_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_interactive_container_connectorpoint_nor.tga"
+                        ]
+                     },
+                     "containerbattery" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_battery_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_battery_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_battery_nor.tga"
+                        ]
+                     },
+                     "screen" : {
+                        "custom" : {
+                           "uv0" : {
+                              "u" : 1,
+                              "v" : 0.1670
+                           }
+                        },
+                        "material" : "UVAnimDifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_screen_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_screen_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/containers/obj_containers_screen_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "restrictions" : {
+            "usable" : true
+         },
+         "rotationSet" : "PropYZ",
+         "scripted" : {
+            "classname" : "BatteryContainer",
+            "data" : {
+               "filterUid" : "910a7f2c-52b0-46eb-8873-ad13255539af",
+               "outE" : 100.0,
+               "stackSize" : 20
+            },
+            "filename" : "$CONTENT_DATA/Scripts/BatteryContainer.lua"
+         },
+         "uuid" : "da4833fd-f981-4e08-a9f7-48e630a7c146"
       }
    ]
 }
